@@ -1,0 +1,281 @@
+ul,li{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+pre{
+  margin: 0;
+}
+
+.modal-open{
+  padding: 20px 40px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #c7133db0;
+
+}
+/*modal*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  transition: all 250ms linear;
+}
+.modal-window {
+  z-index: 20;
+  max-width: 600px;
+  width: 90%;
+  height: auto;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 5px 5px #c7133db0;
+  border-radius: 4px;
+
+}
+.modal-close-button {
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.modal-close__btn-icon {
+  width: 11px;
+  height: 11px;
+  stroke: #000000;
+}
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/*change-theme*/
+.light-theme {
+  background-color: #fff;
+  color: #333333;
+}
+
+.dark-theme {
+  background-color: #494747;
+  color: #fff;
+}
+
+/* THEME SWITCH */
+.theme-switch {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.theme-switch__icon {
+  color: currentColor;
+  height: 24px;
+  width: 24px;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.theme-switch__control {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  width: 64px;
+  height: 32px;
+  border-radius: 50em;
+  padding: 3px 0;
+}
+
+.theme-switch__toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+
+.theme-switch__track {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  user-select: none;
+  background-color: #333;
+  border-radius: inherit;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.theme-switch__marker {
+  position: relative;
+  background-color: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  transform: translateX(3px);
+  transition: transform 250ms var(--timing-function);
+}
+
+.theme-switch__toggle:checked + .theme-switch__track {
+  background-color: #d3d3d4;
+}
+
+.theme-switch__toggle:checked ~ .theme-switch__marker {
+  transform: translateX(35px);
+}
+
+.theme-switch__toggle:focus + .theme-switch__track,
+.theme-switch__toggle:active + .theme-switch__track {
+  box-shadow: 0 0 0 3px #2196f3;
+}
+
+/*calendar*/
+.calendar{
+  max-width: 450px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  position: relative;
+}
+.dark-theme .modal-window{
+  background-color: #c7133db0;
+}
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.month-picker:hover,
+.month-picker:focus{
+  cursor: pointer;
+  color:rgb(234, 173, 173) ;
+}
+.prev-year{
+  margin-right: 20px;
+}
+.next-year{
+  margin-left: 20px;
+}
+.next-year:hover,
+.next-year:focus{
+cursor: pointer;
+color: rgb(234, 173, 173);
+}
+.prev-year:hover,
+.prev-year:focus{
+cursor: pointer;
+color: rgb(234, 173, 173);
+}
+.calendar-body {
+  padding: 10px;
+}
+.year-picker{
+  display: flex;
+  align-items: center;
+}
+.weekdays{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.weekdays li{
+  display: grid;
+  place-items: center; 
+}
+.days{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  min-height: 350px;
+  max-height: 350px;
+}
+
+.calendar-day {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+  font-weight: 550;
+}
+.calendar-day:hover{
+  border-radius: 50%;
+  background-color: #abbcc9;
+}
+.days .curr-date{
+  background-color: #2196f3;
+  color: #fff;
+  border-radius: 50%;
+}
+.month-list{
+  z-index: 3;
+  position: absolute;
+  top: -38px;
+  left: -70px;
+  width: 600px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 2px;
+  align-items: center;
+  text-align: center;
+  visibility: hidden;
+}
+.dark-theme .month-list{
+  background-color: #3f3e3e;
+  color: #fff;
+}
+.light-theme .month-list{
+  background-color: #fff;
+  color: #000;
+}
+.month{
+  font-size: 20px;
+}
+.month:hover,
+.month:focus{
+  color: #c7133db0;
+  cursor: pointer;
+}
+.dark-theme .month:hover,
+.month:focus{
+  color: rgb(234, 173, 173);
+}
+.show{
+visibility: visible;
+
+}
+
+
+
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Click the button</h1>
+
+    <button type="button" class="modal-open" data-modal-open >Choise date</button>
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal-window" >
+            <button type="button" class="modal-close-button" data-modal-close>
+                <svg class="modal-close__btn-icon">
+                    <use href="./images/icons.svg#icon-close"></use>
+                </svg>
+            </button>
+
+            <div class="calendar">
+                <div class="calendar-header">
+                    <span class="month-picker">
+                        April
+                    </span>
+                    <div class="year-picker">
+                        <span class="year-change prev-year">
+                           <pre> &#60;&#60; </pre>
+                        </span>
+                        <span class="year">2022</span>
+                        <span class="year-change next-year">
+                            <pre>&#62;&#62;</pre>
+                        </span>
+                    </div>
+                </div>
+            
+                <div class="calendar-body">
+                    <ul class="weekdays">
+
+                        <li>Mon</li>
+                        <li>Tue</li>
+                        <li>Wed</li>
+                        <li>Thu</li>
+                        <li>Fri</li>
+                        <li>Sat</li>
+                        <li>Sun</li>
+                    </ul>
+            
+                    <ul class="days">
+                    </ul>
+                   
+                </div>
+                <ul class="month-list"></ul>
+            </div>
+
+            <div class="theme-switch">
+                <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
+                    <use href="./images/icons.svg#sun"></use>
+                </svg>
+            
+                <div class="theme-switch__control">
+                    <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle"
+                        aria-label="Переключить между тёмной и светлой темой" />
+                    <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
+                    </label>
+                    <div aria-hidden="true" class="theme-switch__marker"></div>
+                </div>
+            
+                <svg class="theme-switch__icon" aria-label="Иконка луны">
+                    <use href="./images/icons.svg#moon"></use>
+                </svg>
+            </div>
+            </div>
+            </div>
+            </div>
+
+    <script src="index.js"></script>
+    <script src="./change-theme.js"></script>
+</body>
+</html>
